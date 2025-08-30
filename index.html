@@ -1,346 +1,454 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html class="no-js" lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Responsive Website Landing Page - With Background Video Slider | Travel
-    </title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <!-- page title -->
+    <title>سلة المشتريات | مشروع أضحية</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+
+    <!-- وصف الصفحة (SEO) -->
+    <meta name="description" content="شروع أضحية هو مشروع يهدف إلى توفير الأضاحي والعقائق والصدقات للمحتاجين في مختلف أنحاء أفريقيا. نحن نعمل على ضمان وصول الأضاحي إلى الأسر المحتاجة في الوقت المناسب وبطريقة مريحة وآمنة.">
+
+    <meta name="keywords" content="اضحية - مشروع اضحية - اضحية مصر - اضحية السعودية - اضحية الامارات - اضحية اونلاين - اضحية 2024 - اضحية 2025 - اضحية 2026 - اضحية 2027 - اضحية 2028 - اضحية 2029 - اضحية 2030 - اضحية في مصر - اضحية في السعودية - اضحية في الامارات - شراء اضحية - شراء اضحية اونلاين - شراء اضحية عبر الانترنت - افضل موقع لشراء الاضاحي - افضل موقع لشراء الاضاحي اونلاين - افضل موقع لشراء الاضاحي عبر الانترنت">
+
+    <!-- اسم المؤلف -->
+    <meta name="author" content="مشروع أضحية">
+
+    <meta name="robots" content="index, follow">
+
+    <meta http-equiv="Content-Language" content="ar">
+
+    <!-- أيقونة الموقع -->
+    <link rel="icon" href="assets/imgs/logo/LOGO_FOR_WEB.png" type="image/x-icon">
+
+    <!-- ==================== 🔹 Open Graph (Facebook / LinkedIn) ==================== -->
+    <meta property="og:title" content="أفضل متجر لعمل الاضاحي والعقائق في افريقيا">
+    <meta property="og:description" content="توفير الأضاحي والعقائق والصدقات للمحتاجين في مختلف أنحاء أفريقيا.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ayman-saad17490.github.io/odhiya-app/">
+    <meta property="og:image" content="https://ayman-saad17490.github.io/odhiya-app/assets/imgs/logo/OdhiyaBackground.png">
+    <meta property="og:locale" content="ar_EG">
+
+    <!-- ==================== 🔹 Twitter Cards ==================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="أفضل متجر لعمل الاضاحي والعقائق في افريقيا">
+    <meta name="twitter:description" content="توفير الأضاحي والعقائق والصدقات للمحتاجين في مختلف أنحاء أفريقيا.">
+    <meta name="twitter:image" content="https://ayman-saad17490.github.io/odhiya-app/assets/imgs/logo/OdhiyaBackground.png">
+    <meta name="twitter:site" content="@YourTwitterHandle">
+
+    <!-- ==================== 🔹 Canonical Link ==================== -->
+    <!-- لتجنب تكرار الروابط -->
+    <link rel="canonical" href="https://example.com/">
+
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      type="text/css"
+      href="assets/css/global/icommon.css"
     />
-    <!-- <link rel="stylesheet" href="assets/css/all.min.css"> -->
-    <!-- <link
+
+    <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css"
-    /> -->
-    <link rel="stylesheet" href="assets/css/global/icommon.css" />
-    <link rel="stylesheet" href="assets/css/global/bootstrap-all.css" />
+      type="text/css"
+      href="assets/css/global/bootstrap-all.css"
+    />
+
     <link rel="stylesheet" href="assets/css/global/main.css" />
-    <link rel="stylesheet" href="assets/css/global/custom.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/global/custom.css"
+    />
+
+    <link rel="stylesheet" type="text/css" href="assets/css/cart.css" />
+
     <link rel="stylesheet" href="assets/css/global/styles.css" />
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
   </head>
-  <body id="home">
+
+  <body class="rtl" data-template="cart">
+    <style>
+      body,
+      html {
+        font-family: Noto Kufi Arabic, sans-serif;
+      }
+      body{
+        position: relative;
+      }
+    </style>
+
     <div id="app">
-      <header id="pageHeader">
-        <div style="display: flex">
+      <div class="app visible">
+        <header id="pageHeader">
+          <div style="display: flex">
+            <div style="margin-left: 5px"></div>
+
+            <a href="index.html" class="brand">أضحية</a>
+          </div>
+
           <div
-            @click="toggleClass()"
-            :class="{active: isActive}"
-            class="menu-btn"
-            style="margin-left: 5px"
-          ></div>
-
-          <a href="index.html" class="brand">أضحية</a>
-        </div>
-
-        <div :class="{active: isActive}" class="navigation">
-          <div class="navigation-items">
-            <a href="#home">الرئيسية</a>
-            <a href="#products">المنتجات</a>
-            <a href="#about">عن الشركة</a>
-
-            <div class="dropdown-m">
-              <div
-                class="dropdown-m-toggle"
-                @click="!isDisabled && (open = !open)"
+            class="bd-highlight d-flex align-items-center justify-content-end header-cart"
+          >
+            <div class="d-sm-block">
+              <a href="cart.html" style="color: inherit">
+                <h3 v-if="cart.length !== 0" class="cart-header-total">
+                  {{selectedCountry}} {{ totalPrice.toLocaleString('en-US', {
+                  minimumFractionDigits: 2, maximumFractionDigits: 2 }) }}
+                </h3>
+              </a>
+            </div>
+            <div style="position: relative">
+              <a
+                class="a-shopping-cart"
+                href="cart.html"
+                style="color: inherit"
               >
-                <!-- <img :src="selected.flag" alt="selected.code" /> -->
-                {{ selected.name }}
-                <i class="fa fa-chevron-down"></i>
-              </div>
-
-              <div v-if="open" class="dropdown-m-menu">
-                <div
-                  v-for="currency in currencies"
-                  :key="currency.code"
-                  @click="selectCurrency(currency)"
+                <span
+                  class="icon-shopping_cart_black_36dp-1-1 header-theme-icon-primary"
+                  ><span class="path1"></span>
+                  <span class="path2"></span>
+                </span>
+                <span v-if="cart.length !== 0" class="cart-badge"
+                  >{{ cart.length }}</span
                 >
-                  <!-- <img :src="currency.flag" :alt="currency.code" /> -->
-                  {{ currency.name }}
+              </a>
+            </div>
+          </div>
+        </header>
+      </div>
+      <div class="main flex-grow-1 app-content">
+        <section class="breadcrumb-section">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <div class="container d-flex flex-wrap">
+                <li class="breadcrumb-item active" aria-current="page">
+                  <a href="index.html">الرئيسية</a>
+                  / سلة الشراء
+                </li>
+              </div>
+            </ol>
+          </nav>
+        </section>
+
+        <div class="container mb-5">
+          <div class="cart-view">
+            <div v-if="cart.length > 0" class="row cart-products-with-totals">
+              <div class="col-12 col-lg-8">
+                <div class="section-cart-products">
+                  <h2 class="section-title">المنتجات</h2>
+                  <div class="header-wrapper">
+                    <div class="section-cart-products-row d-flex">
+                      <div class="section-cart-products-col-1"></div>
+                      <div class="section-cart-products-col-2 flex-grow-1">
+                        المنتج
+                      </div>
+                      <div class="section-cart-products-col-3">الكمية</div>
+                      <div class="section-cart-products-col-4">السعر</div>
+                    </div>
+                  </div>
+
+                  <div
+                    v-for="(item, index) in cart"
+                    :key="item.id"
+                    class="template_for_cart_products_list"
+                  >
+                    <div class="cart-product-row-wrapper">
+                      <div class="cart-product-row">
+                        <div class="cart-product-delete">
+                          <a @click="cartProductRemove(index)">
+                            <span class="prefix"></span>
+                            <span class="icon-delete"></span>
+                            <span class="delete-text"></span>
+                            <span class="postfix"></span>
+                          </a>
+                        </div>
+                        <div class="cart-product-col-img">
+                          <a
+                            class="cart-product-image-link"
+                            @click="selectedProduct(item.product)" 
+                            href="product-detail.html"
+                          >
+                            <img
+                              class="cart-product-image"
+                              :src="item.product.img"
+                            />
+                          </a>
+                        </div>
+                        <div class="cart-product-col-details">
+                          <h1>
+                            <a
+                              class="cart-product-image-link"
+                              href="/products/4c28bee5b4d14f94a945ebe276eb7f49"
+                              >{{item.product.name}} - {{item.النــية}} -
+                              {{item.الدولة}} - {{item.الإضافات}}</a
+                            >
+                          </h1>
+                          <div class="custom-options-summary">
+                            <div class="custom-field-row">
+                              <span class="custom-field-type-text">
+                                <span class="prefix"></span>
+                                <span class="custom-field-name">
+                                  الاسم الذي يظهر عند التوثيق
+                                </span>
+                                <span class="custom-field-value ml-2"
+                                  >{{item.الاسم}}</span
+                                >
+                                <span class="postfix"></span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cart-products-action">
+                          <div
+                            class="cart-product-quantity-dropdown form-group"
+                          >
+                            <div>
+                              <label></label>
+                              <select
+                                :data-cart-product-id="index"
+                                :data-product-id="item.product.id"
+                                @change="saveChanges()"
+                                v-model="item.quantity"
+                              >
+                                <option v-for="n in 100" :value="n">
+                                  {{n}}
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cart-product-prices">
+                          <div class="totals">
+                            <span class="prefix"></span>
+                            <span class="cart-product-total-price"
+                              >{{(item.price *
+                              item.quantity).toLocaleString('en-US', {
+                              minimumFractionDigits: 2, maximumFractionDigits: 2
+                              })}} {{selectedCountry}}</span
+                            >
+                            <span class="postfix"></span>
+                          </div>
+                          <div class="cart-product-price-each">
+                            <span class="prefix"></span>
+                            <span></span>
+                            <span
+                              >{{item.price.toLocaleString('en-US', {
+                              minimumFractionDigits: 2, maximumFractionDigits: 2
+                              })}} {{selectedCountry}}</span
+                            >
+                            <span class="postfix"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <h2 class="section-title">تفاصيل الفاتورة</h2>
+                <div class="header-wrapper">
+                  <div
+                    class="section-cart-products-row section-cart-totals-row d-flex"
+                  >
+                    <div class="flex-grow-1">الوصف</div>
+                    <div class="flex-shrink-0" style="width: 30%">القيمة</div>
+                  </div>
+                </div>
+
+                <div class="cart-totals-div">
+                  <div class="cart-product-row-wrapper cart-totals-row-wrapper">
+                    <div class="flex-grow-1">الإجمالي ( منتج {{totalQuantity}} )</div>
+                    <div
+                      class="flex-shrink-0"
+                      style="
+                        width: 30%;
+                        font-weight: bold;
+                        color: var(--primary-color);
+                      "
+                    >
+                      {{totalPrice.toLocaleString('en-US', {
+                      minimumFractionDigits: 2, maximumFractionDigits: 2 })}}
+                      {{selectedCountry}}
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="mt-5">
+                    <a
+                      @click="sendToWhatsapp"
+                      class="btn btn-primary btn-lg btn-block"
+                    >
+                      متابعة الشراء
+                    </a>
+                  </div>
+
+                  <div class="mt-3">
+                    <a
+                      href="index.html#products"
+                      class="btn btn-outline-primary btn-lg btn-block"
+                    >
+                      العودة للتسوق
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="a4wrapper">
+              <h2>🛒 Order</h2>
+
+              <!-- جدول الكارت (مخفي) -->
+              <table
+                id="cartTable"
+                border="1"
+                cellpadding="5"
+                style="
+                  width: 100%;
+                  border-collapse: collapse;
+                  text-align: center;
+                "
+              >
+                <thead>
+                  <tr>
+                    <th class="text-center">الإسم</th>
+                    <th class="text-center">المنتج</th>
+                    <th class="text-center">النية</th>
+                    <th class="text-center">الدولة</th>
+                    <th class="text-center">الاضافات</th>
+                    <th class="text-center">الكمية</th>
+                    <th class="text-center">السعر</th>
+                    <th class="text-center">الاجمالي</th>
+                    <th class="text-center">العملة</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(item, index) in cart" :key="index">
+                    <td>{{ item.الاسم }}</td>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{item.النــية}}</td>
+                    <td>{{item.الدولة}}</td>
+                    <td>{{item.الإضافات}}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>
+                      {{ (item.price).toLocaleString('en-US', {
+                      minimumFractionDigits: 2, maximumFractionDigits: 2 }) }}
+                    </td>
+                    <td>
+                      {{ (item.price * item.quantity).toLocaleString('en-US', {
+                      minimumFractionDigits: 2, maximumFractionDigits: 2 }) }}
+                    </td>
+                    <td>{{ selectedCountry }}</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr
+                    style="
+                      position: sticky;
+                      bottom: 0;
+                      background: #eee;
+                      font-weight: bold;
+                    "
+                  >
+                    <td colspan="5" style="text-align: center">الاجمالي</td>
+                    <td colspan="4" style="text-align: center">
+                      {{totalPrice.toLocaleString('en-US', {
+                      minimumFractionDigits: 2, maximumFractionDigits: 2 })}}
+                      {{selectedCountry}}
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+
+            <div v-if="cart.length == 0" class="cart-empty pt-5 pbb-5">
+              <div class="d-flex flex-column align-items-center">
+                <span
+                  class="icon-shopping_cart_black_36dp-1-1 theme-title-primary"
+                  style="font-size: 90px"
+                >
+                  <span class="path1"></span><span class="path2"></span>
+                </span>
+                <h2 class="mt-3">السلة فارغة</h2>
+                <div class="mt-3">
+                  <a href="/index.html#products" class="btn btn-outline-primary btn-lg btn-block">
+                    العودة للتسوق
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div
-          class="bd-highlight d-flex align-items-center justify-content-end header-cart"
+      <div class="footer" style="position: absolute;bottom: 0;left: 0;right: 0;">
+        <footer
+          section-id="52b58543-1f70-4b96-b163-8c2a874cb485"
+          class="d-flex flex-column"
         >
-          <div class="d-sm-block">
-            <a href="cart.html" style="color: inherit">
-              <h3 v-if="cart.length !== 0" class="cart-header-total">
-                {{selectedCountry}} {{ totalPrice.toLocaleString('en-US', {
-                minimumFractionDigits: 2, maximumFractionDigits: 2 }) }}
-              </h3>
-            </a>
-          </div>
-          <div style="position: relative">
-            <a class="a-shopping-cart" href="cart.html" style="color: inherit">
-              <span
-                class="icon-shopping_cart_black_36dp-1-1 header-theme-icon-primary"
-                ><span class="path1"></span>
-                <span class="path2"></span>
-              </span>
-              <span v-if="cart.length !== 0" class="cart-badge"
-                >{{ cart.length }}</span
+          <div class="footer-copyrights-vat-certificate">
+            <div class="container">
+              <div
+                class="d-flex flex-column-reverse flex-lg-row flex-wrap align-items-center justify-content-center footer-store-section-bars"
+                style="border-bottom: 0px"
               >
-            </a>
-          </div>
-        </div>
-      </header>
-
-      <section class="home">
-        <video
-          class="video-slide active"
-          src="assets/video/1.mp4"
-          autoplay
-          muted
-          loop
-        ></video>
-        <div class="content active">
-          <h1>مشروع أضحية<br /><span>بركة تمتد عبر أفريقيا</span></h1>
-          <p>
-            مشروع أضحية هو مشروع يهدف إلى توفير الأضاحي والعقائق والصدقات
-            للمحتاجين في مختلف أنحاء أفريقيا. نحن نعمل على ضمان وصول الأضاحي إلى
-            الأسر المحتاجة في الوقت المناسب وبطريقة مريحة وآمنة. من خلال شبكة
-            واسعة من الشركاء المحليين والمتطوعين، نقوم بتوزيع اللحوم على الأسر
-            الأكثر احتياجاً في القرى والمناطق النائية، مع الحرص على تطبيق معايير
-            الذبح الشرعي والنظافة الصحية. نوثق كل مراحل المشروع بالصور والفيديو
-            لنقل الصورة الحقيقية للمستفيدين ولضمان الشفافية الكاملة في العمل.
-          </p>
-          <a href="#products">اطلب الان</a>
-        </div>
-        <div class="media-icons">
-          <a href="https://www.facebook.com/share/17DUEiQu91/" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/odhiyaapp?igsh=MTM2bHJ0emdvYjhyYg=="
-            target="_blank"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a
-            href="https://x.com/odhiya85554?t=Tv5Z1qC0JYqGCSsLargPGA&s=09"
-            target="_blank"
-          >
-            <i class="fab fa-twitter"></i>
-          </a>
-        </div>
-      </section>
-
-      <section id="products">
-        <div class="products">
-          <div class="product-top">
-            <h1 class="section-title"><span>منتجاتنا</span></h1>
-            <p>
-              نضمن لك سهولة اختيار الأضاحي مع توفير خيارات متنوعة تضمن تنفيذ
-              الطقوس الدينية بأعلي معايير الدقة والإهتمام
-            </p>
-          </div>
-          <div class="product-bottom" id="product-bottom">
-            <div
-              class="product-item"
-              v-for="product in fiteredProducts"
-              :key="product.id"
-            >
-              <div class="icon">
-                <a
-                  @click="selectedProduct(product)"
-                  :href="`product-detail/${slugify(product.name)}.html`"
-                >
-                  <img :src="product.img" />
-                </a>
-              </div>
-              <h2>{{ product.name }}</h2>
-              <p>
-                <span
-                  >{{(product.price[selectedCountry].default).toLocaleString('en-US',
-                  { minimumFractionDigits: 2, maximumFractionDigits: 2
-                  })}}</span
-                >
-                {{ currencyCode }}
-              </p>
-              <div class="add-cart">
-                <a
-                  @click="selectedProduct(product)"
-                  :href="`product-detail/${slugify(product.name)}.html`"
-                  class="cta"
-                  id="add-to-cart"
-                  data-id="${product.id}"
-                  >أضف إلي السلة</a
-                >
+                <div class="d-flex justify-content-center align-items-center">
+                  <span class="text-center footer-copyrights"
+                    ><span
+                      href="#"
+                      target="_blank"
+                      class="footer-marketing-link text-light"
+                      >جميع الحقوق محفوظة لـ مشروع أضحية © 2025</span
+                    ></span
+                  >
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- About Section -->
-      <section id="about">
-        <div class="about">
-          <div class="col-left">
-            <img src="assets/imgs/logo/OdhiyaBackground.png" alt="img" />
-          </div>
-          <div class="col-right">
-            <h2>مشروع <span>أضحية</span></h2>
-            <p>
-              مشروع متخصص في مجال الأضاحي و العقائق، يهدف إلى توفير الأضاحي
-              والعقائق والصدقات للمحتاجين في أفريقيا، ونعمل على ضمان وصول
-              الأضاحي إلى الأسر المحتاجة في الوقت المناسب، وتوثيق ذلك لكم بالاسم
-              والصور والفيديوهات
-            </p>
-            <div class="social">
-              <a
-                href="https://www.instagram.com/odhiyaapp?igsh=MTM2bHJ0emdvYjhyYg=="
-                target="_blank"
-                class="social-icon"
-              >
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a
-                href="https://www.facebook.com/share/17DUEiQu91/"
-                target="_blank"
-                class="social-icon"
-              >
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a
-                href="https://wa.me/+201080807241"
-                target="_blank"
-                class="social-icon"
-              >
-                <i class="fab fa-whatsapp"></i>
-              </a>
-              <a
-                href="https://x.com/odhiya85554?t=Tv5Z1qC0JYqGCSsLargPGA&s=09"
-                target="_blank"
-                class="social-icon"
-              >
-                <i class="fab fa-twitter"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End About Section -->
-
-      <!-- Footer -->
-      <!-- <section id="footer">
-        <div class="footer container">
-          <div class="brand">
-            <p>جميع الحقوق محفوظة | 2025 <span>مشروع أضحية</span></p>
-          </div>
-        </div>
-      </section> -->
-      <div class="footer">
-        <footer class="d-flex flex-column">
-          <div
-            class="d-flex justify-content-center align-items-center flex-wrap p-3"
-          >
-            <span class="text-center text-white mt-3">
-              جميع الحقوق محفوظة لـ مشروع أضحية © 2025
-            </span>
           </div>
         </footer>
       </div>
-      <!-- End Footer -->
     </div>
 
-    <!-- <script src="assets/js/bootstrap.bundle.min.js"></script> -->
     <script src="assets/js/vue.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
     <script type="text/javascript">
-      // document.querySelector('.menu-btn').addEventListener('click', function(){
-      //   document.querySelector('.navigation').classList.toggle('active');
-      //   document.querySelector('.menu-btn').classList.toggle('active');
-      // })
+      const { jsPDF } = window.jspdf;
 
       Vue.createApp({
         data: function () {
           return {
-            isActive: false,
-            isDisabled: false,
-            open: false,
             selectedCountry: "SAR",
-            currencyCode: "رس",
-            selected: {
-              code: "SAR",
-              name: "السعودية",
-            },
-            currencies: [
-              {
-                code: "SAR",
-                name: "السعودية",
-              },
-              {
-                code: "AED",
-                name: "الامـارات",
-              },
-              {
-                code: "EGP",
-                name: "مصـــــر",
-              },
-            ],
-            products: [],
             cart: [],
-            search: "",
+            messageContent: "",
           };
         },
         mounted() {
-          fetch("assets/js/products.json")
-            .then((response) => response.json())
-            .then((data) => {
-              this.products = data;
-              localStorage.setItem("products", JSON.stringify(data));
-            });
-          const saved = localStorage.getItem("currency");
-          if (saved) {
-            this.selected = JSON.parse(saved);
+          const savedCurrency = localStorage.getItem("currency");
+          if (savedCurrency) {
+            this.selected = JSON.parse(savedCurrency);
 
             this.selectedCountry = this.selected.code;
-
-            if (this.selected.code == "SAR") {
-              this.currencyCode = "رس";
-            } else if (this.selected.code == "AED") {
-              this.currencyCode = "دإ";
-            } else if (this.selected.code == "EGP") {
-              this.currencyCode = "جنيه";
-            }
-            const savedCart = localStorage.getItem("cart");
-            if (savedCart) {
-              this.cart = JSON.parse(savedCart);
-              this.isDisabled = true;
-              document
-                .querySelector(".dropdown-m-toggle")
-                .classList.add("disabled");
-            }
-          }
-          // const currencySaved = localStorage.getItem("currencyCode");
-          // if (currencySaved) this.currencyCode = currencySaved;
+          };
+          const savedCart = localStorage.getItem("cart");
+          if (savedCart) {
+            this.cart = JSON.parse(savedCart);
+            this.saveMessage();
+          };
           this.headerScroll();
         },
         methods: {
-          toggleClass() {
-            this.isActive = !this.isActive;
-          },
-          selectCurrency(currency) {
-            this.selected = currency;
-            this.selectedCountry = currency.code;
-            if (this.selected.code == "SAR") {
-              this.currencyCode = "رس";
-            } else if (this.selected.code == "AED") {
-              this.currencyCode = "دإ";
-            } else if (this.selected.code == "EGP") {
-              this.currencyCode = "ج";
-            }
-            this.open = false;
-            localStorage.setItem("currency", JSON.stringify(currency));
-            localStorage.setItem("currencyCode", currency.code);
-          },
           selectedProduct(product) {
             localStorage.setItem("product", JSON.stringify(product));
           },
@@ -355,14 +463,77 @@
               }
             });
           },
-          slugify(text) {
-            return text
-              .toString() // تأكيد أنه نص
-              .trim() // إزالة المسافات من البداية والنهاية
-              .toLowerCase() // تحويل للحروف الصغيرة
-              .replace(/\s+/g, "-") // استبدال المسافات بـ -
-              .replace(/[^\u0600-\u06FFa-z0-9-]/g, "") // حذف أي رموز غير العربية/الإنجليزية/الأرقام/-
-              .replace(/-+/g, "-"); // منع تكرار الشرطات
+          saveChanges() {
+            localStorage.removeItem("cart");
+            localStorage.setItem("cart", JSON.stringify(this.cart));
+            this.saveMessage();
+          },
+          cartProductRemove(index) {
+            this.cart.splice(index, 1);
+            localStorage.removeItem("cart");
+            localStorage.setItem("cart", JSON.stringify(this.cart));
+            this.saveMessage();
+            if (this.cart.length < 1) {
+              localStorage.removeItem("cart");
+              this.messContent = '';
+            }
+
+          },
+          saveMessage() {
+            let messContent = '';
+            this.cart.forEach((item) => {
+              messContent += `الإسم: ${item.الاسم}\nالنية: ${item.النــية}\nالدولة: ${item.الدولة}\nالاضافات: ${item.الإضافات}\nالكمية: ${item.quantity}\nالسعر: ${item.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${this.selectedCountry}\n\nاجمالي الطلب: ${(item.price * item.quantity).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${this.selectedCountry}\n-------------------------\n\n`;
+            });
+            this.messageContent = messContent;
+          },
+          async sendToWhatsapp() {
+            // 1) تحويل الجدول لصورة
+            const element = document.getElementById("a4wrapper");
+            const now = new Date();
+            const year   = now.getFullYear();
+            const month  = String(now.getMonth() + 1).padStart(2, "0");
+            const day    = String(now.getDate()).padStart(2, "0");
+            const hours   = String(now.getHours()).padStart(2, "0");
+            const minutes = String(now.getMinutes()).padStart(2, "0");
+
+           const text = `${year}-${month}-${day} - ${hours}:${minutes}`;
+
+            element.classList.add("screen");
+
+            const canvas = await html2canvas(element, { scale: 2 });
+            const imgData = canvas.toDataURL("image/png");
+
+            // 2) إدراج الصورة داخل PDF
+            // const pdf = new jsPDF("p", "pt", "a4");
+            // const imgProps = pdf.getImageProperties(imgData);
+            // const pdfWidth = pdf.internal.pageSize.getWidth();
+            // const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            // pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+
+            // 3) تحميل PDF
+            // pdf.save("order.pdf");
+
+            // 3️⃣ تحميل الصورة عند العميل
+            const link = document.createElement("a");
+            link.href = imgData;
+            link.download = `${text}-cart.png`;
+            link.click();
+
+            // 4) فتح رابط واتساب مع رسالة نصية
+            const phone = "201080807241"; // ← رقم العميل مع كود الدولة
+            const today = new Date().toLocaleDateString();
+            const message = 
+            `مرحبًا، هذا ملخص الطلب بتاريخ ${today}. تجد الملف PDF في المرفقات.\n\n${this.messageContent}الإجمالي الكلي: ${this.selectedCountry} ${(this.totalPrice).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}\nشكراً لك!`;
+            const encoded = encodeURIComponent(message);
+            
+            window.open(
+              `https://wa.me/${phone}?text=${encoded}`,
+              "_blank"
+            );
+            localStorage.removeItem("cart");
+            this.cart = [];
+            element.classList.remove("screen");
           },
         },
         computed: {
@@ -372,10 +543,10 @@
               .reduce((sum, item) => sum + item.price * item.quantity, 0)
               .toFixed(2);
           },
-          fiteredProducts() {
-            return this.products.filter((product) =>
-              product.name.toLowerCase().includes(this.search.toLowerCase())
-            );
+          totalQuantity() {
+            // حساب السعر الكلي
+            return this.cart
+              .reduce((sum, item) => sum + item.quantity, 0);
           },
         },
       }).mount("#app");
