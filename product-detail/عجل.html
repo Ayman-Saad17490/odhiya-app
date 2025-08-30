@@ -544,7 +544,7 @@
           if (savedCart) {
             this.cart = JSON.parse(savedCart);
           }
-          fetch("assets/js/products.json")
+          fetch("../assets/js/products.json")
             .then((response) => response.json())
             .then((data) => {
               let allData = [];
@@ -638,3 +638,4 @@
     </script>
   </body>
 </html>
+
