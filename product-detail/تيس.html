@@ -197,20 +197,8 @@
                         ></div>
 
                         <p class="text-short-description"></p>
-                        <p>
-                          ✅المنتج يشمل (تيس ذكر أو ماعز أنثى ) حسب المتوفر.
-                        </p>
-                        <p>✅يكفي لحوالي 13 شخص تقريبًا.</p>
-                        <p>
-                          ✅خاصية طباعة الأسماء حسب رغبتكم لتظهر في التقرير
-                          النهائي.
-                        </p>
-                        <p>
-                          ✅يتم توزيع اللحوم على القرى والعوائل الأشد حاجة في
-                          أفريقيا.
-                        </p>
-                        <p>
-                          ✅ مدة التنفيذ من 3 - 5 أيام عمل كحد أقصى إن شاء الله.
+                        <p v-for="(desc, i) in product.des" :key="i">
+                          ✅{{desc}}
                         </p>
                         <a
                           id="product-description-a"
@@ -602,7 +590,7 @@
             this.quantity = 1;
             console.log(this.cart);
 
-            window.location.href = "/../index.html";
+            window.location.href = "../cart.html";
           },
           selectOption(key, vlue) {
             this.selectedOptions[key] = vlue;
